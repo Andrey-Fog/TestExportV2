@@ -22,12 +22,18 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.MenuStrip = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TextFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OpenFileDialog = New System.Windows.Forms.OpenFileDialog()
         Me.lblFileName = New System.Windows.Forms.Label()
         Me.lblRecordsInFile = New System.Windows.Forms.Label()
@@ -45,12 +51,7 @@ Partial Class frmMain
         Me.txtLastPoint = New System.Windows.Forms.TextBox()
         Me.lblFirstPoint = New System.Windows.Forms.Label()
         Me.lblLastPoint = New System.Windows.Forms.Label()
-        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TextFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HScrollBarFirstPoint = New System.Windows.Forms.HScrollBar()
         Me.MenuStrip.SuspendLayout()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,8 +75,46 @@ Partial Class frmMain
         'OpenToolStripMenuItem
         '
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(103, 22)
         Me.OpenToolStripMenuItem.Text = "Open"
+        '
+        'DataToolStripMenuItem
+        '
+        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyToolStripMenuItem})
+        Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
+        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.DataToolStripMenuItem.Text = "Data"
+        '
+        'CopyToolStripMenuItem
+        '
+        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
+        Me.CopyToolStripMenuItem.Text = "Copy"
+        '
+        'ExportToolStripMenuItem
+        '
+        Me.ExportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExcelToolStripMenuItem, Me.TextFileToolStripMenuItem})
+        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
+        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.ExportToolStripMenuItem.Text = "Export"
+        '
+        'ExcelToolStripMenuItem
+        '
+        Me.ExcelToolStripMenuItem.Name = "ExcelToolStripMenuItem"
+        Me.ExcelToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.ExcelToolStripMenuItem.Text = "Excel"
+        '
+        'TextFileToolStripMenuItem
+        '
+        Me.TextFileToolStripMenuItem.Name = "TextFileToolStripMenuItem"
+        Me.TextFileToolStripMenuItem.Size = New System.Drawing.Size(114, 22)
+        Me.TextFileToolStripMenuItem.Text = "Text file"
+        '
+        'AboutToolStripMenuItem
+        '
+        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
+        Me.AboutToolStripMenuItem.Text = "About"
         '
         'OpenFileDialog
         '
@@ -157,16 +196,16 @@ Partial Class frmMain
         'Chart
         '
         Me.Chart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Sunken
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.Chart.Legends.Add(Legend2)
+        ChartArea1.Name = "ChartArea1"
+        Me.Chart.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.Chart.Legends.Add(Legend1)
         Me.Chart.Location = New System.Drawing.Point(69, 220)
         Me.Chart.Name = "Chart"
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.Name = "Series1"
-        Me.Chart.Series.Add(Series2)
+        Series1.ChartArea = "ChartArea1"
+        Series1.Legend = "Legend1"
+        Series1.Name = "Series1"
+        Me.Chart.Series.Add(Series1)
         Me.Chart.Size = New System.Drawing.Size(590, 285)
         Me.Chart.TabIndex = 10
         Me.Chart.Text = "Chart1"
@@ -232,49 +271,19 @@ Partial Class frmMain
         Me.lblLastPoint.TabIndex = 16
         Me.lblLastPoint.Text = "Last point"
         '
-        'ExportToolStripMenuItem
+        'HScrollBarFirstPoint
         '
-        Me.ExportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExcelToolStripMenuItem, Me.TextFileToolStripMenuItem})
-        Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
-        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.ExportToolStripMenuItem.Text = "Export"
-        '
-        'ExcelToolStripMenuItem
-        '
-        Me.ExcelToolStripMenuItem.Name = "ExcelToolStripMenuItem"
-        Me.ExcelToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ExcelToolStripMenuItem.Text = "Excel"
-        '
-        'TextFileToolStripMenuItem
-        '
-        Me.TextFileToolStripMenuItem.Name = "TextFileToolStripMenuItem"
-        Me.TextFileToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.TextFileToolStripMenuItem.Text = "Text file"
-        '
-        'DataToolStripMenuItem
-        '
-        Me.DataToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyToolStripMenuItem})
-        Me.DataToolStripMenuItem.Name = "DataToolStripMenuItem"
-        Me.DataToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
-        Me.DataToolStripMenuItem.Text = "Data"
-        '
-        'CopyToolStripMenuItem
-        '
-        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
-        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.CopyToolStripMenuItem.Text = "Copy"
-        '
-        'AboutToolStripMenuItem
-        '
-        Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
-        Me.AboutToolStripMenuItem.Text = "About"
+        Me.HScrollBarFirstPoint.Location = New System.Drawing.Point(187, 610)
+        Me.HScrollBarFirstPoint.Name = "HScrollBarFirstPoint"
+        Me.HScrollBarFirstPoint.Size = New System.Drawing.Size(472, 20)
+        Me.HScrollBarFirstPoint.TabIndex = 19
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(671, 696)
+        Me.Controls.Add(Me.HScrollBarFirstPoint)
         Me.Controls.Add(Me.lblLastPoint)
         Me.Controls.Add(Me.lblFirstPoint)
         Me.Controls.Add(Me.txtLastPoint)
@@ -328,5 +337,6 @@ Partial Class frmMain
     Friend WithEvents ExcelToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TextFileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents HScrollBarFirstPoint As System.Windows.Forms.HScrollBar
 
 End Class
