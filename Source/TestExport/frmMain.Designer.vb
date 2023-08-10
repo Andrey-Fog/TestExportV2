@@ -52,6 +52,7 @@ Partial Class frmMain
         Me.lblFirstPoint = New System.Windows.Forms.Label()
         Me.lblLastPoint = New System.Windows.Forms.Label()
         Me.HScrollBarFirstPoint = New System.Windows.Forms.HScrollBar()
+        Me.HScrollBarLastPoint = New System.Windows.Forms.HScrollBar()
         Me.MenuStrip.SuspendLayout()
         CType(Me.Chart, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -265,7 +266,7 @@ Partial Class frmMain
         'lblLastPoint
         '
         Me.lblLastPoint.AutoSize = True
-        Me.lblLastPoint.Location = New System.Drawing.Point(26, 639)
+        Me.lblLastPoint.Location = New System.Drawing.Point(23, 639)
         Me.lblLastPoint.Name = "lblLastPoint"
         Me.lblLastPoint.Size = New System.Drawing.Size(53, 13)
         Me.lblLastPoint.TabIndex = 16
@@ -278,11 +279,19 @@ Partial Class frmMain
         Me.HScrollBarFirstPoint.Size = New System.Drawing.Size(472, 20)
         Me.HScrollBarFirstPoint.TabIndex = 19
         '
+        'HScrollBarLastPoint
+        '
+        Me.HScrollBarLastPoint.Location = New System.Drawing.Point(187, 636)
+        Me.HScrollBarLastPoint.Name = "HScrollBarLastPoint"
+        Me.HScrollBarLastPoint.Size = New System.Drawing.Size(472, 20)
+        Me.HScrollBarLastPoint.TabIndex = 20
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(671, 696)
+        Me.Controls.Add(Me.HScrollBarLastPoint)
         Me.Controls.Add(Me.HScrollBarFirstPoint)
         Me.Controls.Add(Me.lblLastPoint)
         Me.Controls.Add(Me.lblFirstPoint)
@@ -338,5 +347,6 @@ Partial Class frmMain
     Friend WithEvents TextFileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AboutToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents HScrollBarFirstPoint As System.Windows.Forms.HScrollBar
+    Friend WithEvents HScrollBarLastPoint As System.Windows.Forms.HScrollBar
 
 End Class
