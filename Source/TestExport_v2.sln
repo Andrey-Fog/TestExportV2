@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TestExport", "TestExport\TestExport.vbproj", "{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Debug|x64.ActiveCfg = Debug|x64
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Debug|x64.Build.0 = Debug|x64
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Release|x64.ActiveCfg = Release|x64
+		{20B90DB7-FC4D-4A3D-BA98-C12DC3474259}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
